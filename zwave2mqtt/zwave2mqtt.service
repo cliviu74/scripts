@@ -1,0 +1,12 @@
+[Unit]
+Description=Zwave2Mqtt Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStart=/usr/bin/docker run --name zwave2mqtt --rm -p 8091:8091 --device=/dev/ttyACM0 -v /opt/zwave2mqtt/store:/usr/src/app/store robertslando/zwave2mqtt:latest
+ExecStop=/usr/bin/docker stop zwave2mqtt
+[Install]
+WantedBy=multi-user.target

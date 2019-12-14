@@ -3,7 +3,7 @@
 
 ## Home Assistant update script for freenas jail
 
-### Installation
+## Installation
 
 ``` shell
 curl -o /usr/local/bin/hass-update.csh https://raw.githubusercontent.com/cliviu74/scripts/master/home-assistant/hass-update.csh

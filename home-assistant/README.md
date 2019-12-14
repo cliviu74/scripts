@@ -2,6 +2,12 @@
 
 
 ## Home Assistant installation script for freenas jails - homeassistant-install-freenas.csh
+You can attach to the jail with the iocage console command 
+
+``` shell
+iocage console hass << replace this with your freenas jail name 
+```
+
 
 ```
 pkg -y install curl

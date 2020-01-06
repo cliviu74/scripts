@@ -38,4 +38,5 @@ ln -s /usr/local/bin/hass-update.csh /usr/local/bin/hass-update
 ## Credits
 
 Home Assistant - https://www.home-assistant.io/
+
 FreeNAS - https://www.freenas.org/

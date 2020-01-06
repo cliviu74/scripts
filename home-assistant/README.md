@@ -34,3 +34,8 @@ curl -o /usr/local/bin/hass-update.csh https://raw.githubusercontent.com/cliviu7
 chmod +x /usr/local/bin/hass-update.csh
 ln -s /usr/local/bin/hass-update.csh /usr/local/bin/hass-update
 ```
+
+## Credits
+
+Home Assistant - https://www.home-assistant.io/
+FreeNAS - https://www.freenas.org/

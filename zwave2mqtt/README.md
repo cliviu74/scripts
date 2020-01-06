@@ -22,3 +22,6 @@ systemctl restart zwave2mqtt
 ## Warning
 Since service restart will pull the latest image, you will need to back-up configuration data before restarting.
 Configuration data is currently stored in /opt/zwave2mqtt/store/
+
+## Credits
+Zwave2Mqtt - https://github.com/OpenZWave/Zwave2Mqtt

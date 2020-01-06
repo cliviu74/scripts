@@ -1,2 +1,2 @@
-# Repository hosting variuos shell scripts
+# Repository hosting various shell scripts
 

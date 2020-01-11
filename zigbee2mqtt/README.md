@@ -21,4 +21,5 @@ wget -O - https://raw.githubusercontent.com/cliviu74/scripts/master/zigbee2mqtt/
 ## Credits
 
 Zigbee2Mqtt project - https://www.zigbee2mqtt.io/
+
 Steven de Salas scripts for installing NodeJS on ARMv6 - https://github.com/sdesalas/node-pi-zero

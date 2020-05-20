@@ -14,8 +14,9 @@ wget -O - https://raw.githubusercontent.com/cliviu74/scripts/master/zigbee2mqtt/
 
 ## Update
 
+To update to version 1.13.1 run. Replace parameter with appropriate version 
 ```
-wget -O - https://raw.githubusercontent.com/cliviu74/scripts/master/zigbee2mqtt/zigbee2mqtt-update.sh | bash
+wget -O - https://raw.githubusercontent.com/cliviu74/scripts/master/zigbee2mqtt/zigbee2mqtt-update.sh | bash -s -- 1.13.1
 ```
 
 ## Credits

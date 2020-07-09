@@ -35,9 +35,9 @@ chmod +x /usr/local/bin/hass-update.csh
 ln -s /usr/local/bin/hass-update.csh /usr/local/bin/hass-update
 ```
 
-Oneliner update 
+One line update 
 ```shell
-curl -o /usr/local/bin/hass-update.csh https://raw.githubusercontent.com/cliviu74/scripts/master/home-assistant/hass-update.csh | csh
+curl https://raw.githubusercontent.com/cliviu74/scripts/master/home-assistant/hass-update.csh | csh
 ```
 ## Disclaimer
 Please run the scripts on your own risk. While I am using this scripts on regular basis to update my Home Assistant freenas jail, the script may not work on all environments. Please backup before running the scripts. If you find any issues, you can open an issue in this repository.

@@ -1,7 +1,7 @@
 # Home Assistant maintenance scripts
 
 
-## Home Assistant installation on FreeNAS / Truenas jail
+## Home Assistant installation on FreeNAS / TrueNAS jail
 
 First, you need to create a freenas jail. nixCraft blog has a good tutorial on creating jails on freenas https://www.cyberciti.biz/faq/how-to-create-freenas-jails-with-iocage/
 

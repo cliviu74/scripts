@@ -40,7 +40,10 @@ One line update
 curl https://raw.githubusercontent.com/cliviu74/scripts/master/home-assistant/hass-update.csh | csh
 ```
 ## Disclaimer
-Please run the scripts on your own risk. While I am using this scripts on regular basis to update my Home Assistant freenas jail, the script may not work on all environments. Please backup before running the scripts. If you find any issues, you can open an issue in this repository.
+Please run the scripts on your own risk. While I am using this scripts on regular basis to update my Home Assistant freenas jail, the script may not work on all environments. Please backup before running the scripts. 
+
+## Reporting bugs or issues
+If you have any problems running these scripts, please report them by opening an issue in this repository - https://github.com/cliviu74/scripts/issues
 
 ## Credits
 

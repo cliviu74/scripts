@@ -17,7 +17,12 @@ virtualenv -p python3.7 .
 source ./bin/activate.csh
 pip3 install homeassistant
 
-timeout 180 hass --open-ui
+# Run ensure_config startup script to create initial configuration
+hass --script ensure_config
+
+# Run check_config startup script to install initial dependencies 
+hass --script check_config
+
 deactivate
 EOS
 

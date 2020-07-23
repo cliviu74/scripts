@@ -1,6 +1,6 @@
 #!/bin/csh
 
-pkg install -y nano ffmpeg pkgconf python37 py37-sqlite3 ca_root_nss libxslt lxml
+pkg install -y nano ffmpeg pkgconf python37 py37-sqlite3 ca_root_nss libxslt py37-lxml
 pw groupadd -n homeassistant -g 8123
 echo 'homeassistant:8123:8123::::::/bin/csh:' | adduser -f -
 

@@ -1,6 +1,6 @@
 #!/bin/csh
 
-pkg install -y nano ffmpeg pkgconf python37 py37-sqlite3 ca_root_nss libxslt lxml
+pkg install -y nano ffmpeg pkgconf python37 py37-sqlite3 ca_root_nss libxslt py37-lxml
 pw groupadd -n homeassistant -g 8123
 echo 'homeassistant:8123:8123::::::/bin/csh:' | adduser -f -
 
@@ -17,7 +17,12 @@ virtualenv -p python3.7 .
 source ./bin/activate.csh
 pip3 install homeassistant
 
-timeout 180 hass --open-ui
+# Run ensure_config startup script to create initial configuration
+hass --script ensure_config
+
+# Run check_config startup script to install initial dependencies 
+hass --script check_config
+
 deactivate
 EOS
 

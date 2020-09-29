@@ -1,10 +1,10 @@
 #!/bin/csh
 
-pkg install -y nano ffmpeg pkgconf python37 py37-sqlite3 ca_root_nss libxslt py37-lxml
+pkg install -y nano ffmpeg pkgconf python38 py38-sqlite3 ca_root_nss libxslt py38-lxml
 pw groupadd -n homeassistant -g 8123
 echo 'homeassistant:8123:8123::::::/bin/csh:' | adduser -f -
 
-python3.7 -m ensurepip
+python3.8 -m ensurepip
 pip3 install --upgrade pip virtualenv av==6.1.2
 
 mkdir -p /usr/local/share/homeassistant
@@ -13,7 +13,7 @@ chown -R homeassistant:homeassistant /usr/local/share/homeassistant
 su homeassistant -c '/bin/csh' << EOS
 
 cd /usr/local/share/homeassistant
-virtualenv -p python3.7 .
+virtualenv -p python3.8 .
 source ./bin/activate.csh
 pip3 install homeassistant
 

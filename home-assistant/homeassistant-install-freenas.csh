@@ -4,7 +4,7 @@ pkg install -y nano ffmpeg pkgconf python38 py38-sqlite3 ca_root_nss libxslt
 pw groupadd -n homeassistant -g 8123
 echo 'homeassistant:8123:8123::::::/bin/csh:' | adduser -f -
 
-python3.8 -m ensurepip
+/usr/local/bin/python3.8 -m ensurepip
 
 sleep 5
 pip3 install --upgrade pip virtualenv av==6.1.2

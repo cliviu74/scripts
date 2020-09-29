@@ -5,6 +5,8 @@ pw groupadd -n homeassistant -g 8123
 echo 'homeassistant:8123:8123::::::/bin/csh:' | adduser -f -
 
 python3.8 -m ensurepip
+
+sleep 5
 pip3 install --upgrade pip virtualenv av==6.1.2
 
 mkdir -p /usr/local/share/homeassistant

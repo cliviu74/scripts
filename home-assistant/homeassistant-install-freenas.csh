@@ -6,8 +6,7 @@ echo 'homeassistant:8123:8123::::::/bin/csh:' | adduser -f -
 
 /usr/local/bin/python3.8 -m ensurepip
 
-sleep 5
-pip3 install --upgrade pip virtualenv av==6.1.2
+/usr/local/bin/pip3.8 install --upgrade pip virtualenv av==6.1.2
 
 mkdir -p /usr/local/share/homeassistant
 chown -R homeassistant:homeassistant /usr/local/share/homeassistant
@@ -17,7 +16,7 @@ su homeassistant -c '/bin/csh' << EOS
 cd /usr/local/share/homeassistant
 virtualenv -p python3.8 .
 source ./bin/activate.csh
-pip3 install homeassistant
+/usr/local/bin/pip3.8 install homeassistant
 
 # Run ensure_config startup script to create initial configuration
 hass --script ensure_config

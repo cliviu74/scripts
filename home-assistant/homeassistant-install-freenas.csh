@@ -5,7 +5,10 @@ pw groupadd -n homeassistant -g 8123
 echo 'homeassistant:8123:8123::::::/bin/csh:' | adduser -f -
 
 /usr/local/bin/python3.8 -m ensurepip
-/usr/local/bin/pip3.8 install --upgrade pip virtualenv av==6.1.2
+/usr/local/bin/pip3.8 install --upgrade pip virtualenv
+
+# Workaround for pyAV installation issues with pkg-config in virtualenv
+ln -s /usr/local/bin/pkgconf /bin/pkg-config
 
 mkdir -p /usr/local/share/homeassistant
 chown -R homeassistant:homeassistant /usr/local/share/homeassistant

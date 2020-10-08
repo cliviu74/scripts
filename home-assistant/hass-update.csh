@@ -8,7 +8,7 @@ su homeassistant -c /bin/csh << EOS
 cd /usr/local/share/homeassistant
 source /usr/local/share/homeassistant/bin/activate.csh
 
-pip3 install homeassistant --upgrade
+pip3.8 install homeassistant --upgrade
 EOS
 
 service hass start

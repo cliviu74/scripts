@@ -1,11 +1,14 @@
-#!/bin/csh
-
-pkg install -y nano ffmpeg pkgconf python37 py37-sqlite3 ca_root_nss libxslt py37-lxml
+#!/bin/sh
+{
+pkg install -y nano ffmpeg pkgconf python38 py38-sqlite3 ca_root_nss libxslt mariadb104-client
 pw groupadd -n homeassistant -g 8123
 echo 'homeassistant:8123:8123::::::/bin/csh:' | adduser -f -
 
-python3.7 -m ensurepip
-pip3 install --upgrade pip virtualenv av==6.1.2
+/usr/local/bin/python3.8 -m ensurepip
+/usr/local/bin/pip3.8 install --upgrade pip virtualenv
+
+# Workaround for pyAV installation issues with pkg-config in virtualenv
+ln -s /usr/local/bin/pkgconf /bin/pkg-config
 
 mkdir -p /usr/local/share/homeassistant
 chown -R homeassistant:homeassistant /usr/local/share/homeassistant
@@ -13,9 +16,10 @@ chown -R homeassistant:homeassistant /usr/local/share/homeassistant
 su homeassistant -c '/bin/csh' << EOS
 
 cd /usr/local/share/homeassistant
-virtualenv -p python3.7 .
+virtualenv -p python3.8 .
 source ./bin/activate.csh
-pip3 install homeassistant
+python3.8 -m ensurepip
+pip3.8 install --upgrade pip mysqlclient homeassistant
 
 # Run ensure_config startup script to create initial configuration
 hass --script ensure_config
@@ -31,3 +35,4 @@ curl -o /usr/local/etc/rc.d/homeassistant https://raw.githubusercontent.com/cliv
 chmod +x /usr/local/etc/rc.d/homeassistant
 ln -s /usr/local/etc/rc.d/homeassistant /usr/local/etc/rc.d/hass
 sysrc homeassistant_enable="YES"
+} 2>&1 | tee homeassistant-install.log

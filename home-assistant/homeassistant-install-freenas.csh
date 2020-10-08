@@ -1,6 +1,6 @@
 #!/bin/sh
 {
-pkg install -y nano ffmpeg pkgconf python38 py38-sqlite3 ca_root_nss libxslt
+pkg install -y nano ffmpeg pkgconf python38 py38-sqlite3 ca_root_nss libxslt mariadb104-client
 pw groupadd -n homeassistant -g 8123
 echo 'homeassistant:8123:8123::::::/bin/csh:' | adduser -f -
 
@@ -19,7 +19,7 @@ cd /usr/local/share/homeassistant
 virtualenv -p python3.8 .
 source ./bin/activate.csh
 python3.8 -m ensurepip
-pip3.8 install --upgrade pip homeassistant
+pip3.8 install --upgrade pip mysqlclient homeassistant
 
 # Run ensure_config startup script to create initial configuration
 hass --script ensure_config

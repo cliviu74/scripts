@@ -1,6 +1,8 @@
 
 #!/bin/env bash
 
+set -e
+
 Z2M_DEFAULT_VERSION='1.13.1'
 Z2M_VERSION=${1:-$Z2M_DEFAULT_VERSION}
 

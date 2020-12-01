@@ -10,4 +10,5 @@ sudo systemctl daemon-reload
 sudo systemctl enable zigbee2mqtt
 sudo systemctl start zigbee2mqtt
 sudo wget -O /usr/local/bin/zigbee2mqtt-update.sh https://raw.githubusercontent.com/cliviu74/scripts/master/zigbee2mqtt/zigbee2mqtt-update.sh
-sudo chmod +x /usr/local/bin/zigbee2mqtt-update.sh 
+sudo chmod +x /usr/local/bin/zigbee2mqtt-update.sh
+ln -s /usr/local/bin/zigbee2mqtt-update.sh /usr/local/bin/zigbee2mqtt-update

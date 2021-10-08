@@ -1,6 +1,6 @@
 #!/bin/sh
 {
-pkg install -y curl nano ffmpeg pkgconf python39 py39-sqlite3 ca_root_nss libxslt mariadb104-client
+pkg install -y curl nano ffmpeg pkgconf python39 py39-sqlite3 ca_root_nss libxslt mariadb104-client rust
 pw groupadd -n homeassistant -g 8123
 echo 'homeassistant:8123:8123::::::/bin/csh:' | adduser -f -
 

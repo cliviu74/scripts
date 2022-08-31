@@ -42,7 +42,7 @@ command="/usr/sbin/daemon"
 start_precmd=${name}_precmd
 homeassistant_precmd()
 {
-    rc_flags="-f -P ${pidfile} -p ${pidfile_child} ${homeassistant_install_dir}/bin/hass --config ${homeassistant_config_dir} ${rc_flags}"
+    rc_flags="-f -P ${pidfile} -p ${pidfile_child} ${homeassistant_install_dir}/bin/hass --ignore-os-check --config ${homeassistant_config_dir} ${rc_flags}"
 
     if [ ! -e "${pidfile_child}" ]; then
             install -g ${homeassistant_group} -o ${homeassistant_user} -- /dev/null "${pidfile_child}";
@@ -57,7 +57,7 @@ homeassistant_precmd()
     fi
 
     echo "Performing check on Home Assistant configuration:"
-    eval "${homeassistant_install_dir}/bin/hass" --config "${homeassistant_config_dir}" --script check_config
+    su homeassistant -c '/usr/local/share/homeassistant/bin/hass  --ignore-os-check --config /home/homeassistant/.homeassistant --script check_config'
 }
 
 stop_postcmd=${name}_postcmd
